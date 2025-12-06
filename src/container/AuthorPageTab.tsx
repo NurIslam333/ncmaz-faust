@@ -1,14 +1,14 @@
 import getTrans from "@/utils/getTrans";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState, ReactElement } from "react";
 
 const T = getTrans();
 
 const TABS: {
   tab: TabProps["currentTab"];
   label: string;
-  svgIcon: JSX.Element;
+  svgIcon: ReactElement;
 }[] = [
   {
     tab: "",
