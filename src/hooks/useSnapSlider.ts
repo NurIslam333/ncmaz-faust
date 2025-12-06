@@ -4,7 +4,7 @@ import _ from 'lodash'
 export default function useSnapSlider({
 	sliderRef,
 }: {
-	sliderRef: React.RefObject<HTMLDivElement>
+	sliderRef: React.RefObject<HTMLDivElement | null>
 }) {
 	const [isAtEnd, setIsAtEnd] = useState(false)
 	const [isAtStart, setIsAtStart] = useState(true)
