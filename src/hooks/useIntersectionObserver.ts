@@ -5,7 +5,7 @@ export interface UseIntersectionObserverArgs extends IntersectionObserverInit {
 }
 
 function useIntersectionObserver(
-  elementRef: RefObject<Element> | HTMLElement | null,
+  elementRef: RefObject<Element | null> | RefObject<HTMLElement | null> | HTMLElement | null,
   {
     threshold = 0,
     root = null,
@@ -23,8 +23,9 @@ function useIntersectionObserver(
 
   useEffect(() => {
     const node =
-      (elementRef as RefObject<Element>)?.current ??
-      (elementRef as HTMLElement); // DOM Ref
+      (elementRef && typeof elementRef === 'object' && 'current' in elementRef)
+        ? (elementRef as RefObject<Element | null>).current
+        : (elementRef as HTMLElement | null); // DOM Ref
     const hasIOSupport = !!window.IntersectionObserver;
 
     if (!hasIOSupport || frozen || !node) return;
