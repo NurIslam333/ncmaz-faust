@@ -179,7 +179,7 @@ const SearchModal: FC<Props> = ({ renderTrigger, triggerClassName = '' }) => {
 						>
 							<DialogPanel className="mx-auto w-full max-w-2xl transform divide-y divide-gray-100 self-end overflow-hidden bg-white shadow-2xl ring-1 ring-black/5 transition-all sm:self-start sm:rounded-xl dark:divide-gray-700 dark:bg-neutral-800 dark:ring-white/10">
 								<Combobox
-									onChange={(item?: PersonType) => {
+									onChange={(item: PersonType | null) => {
 										if (!item?.uri) {
 											return
 										}
