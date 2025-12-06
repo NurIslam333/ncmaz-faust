@@ -1,7 +1,7 @@
 'use client'
 
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid'
-import { FC, Fragment, ReactNode } from 'react'
+import { FC, Fragment, ReactNode, ReactElement } from 'react'
 import {
 	Menu,
 	MenuButton,
@@ -25,7 +25,7 @@ export interface NcDropDownProps<T> {
 	triggerIconClass?: string
 	data: NcDropDownItem<T>[]
 	renderTrigger?: () => ReactNode
-	renderItem?: (item: NcDropDownItem<T>) => JSX.Element
+	renderItem?: (item: NcDropDownItem<T>) => ReactElement
 	title?: string
 	onClick: (item: NcDropDownItem<T>) => void
 	dropdownItemsClass?: string
